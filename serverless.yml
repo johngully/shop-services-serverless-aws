@@ -1,0 +1,28 @@
+service: shop-services-serverless-aws
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
+functions:
+  products:
+    handler: handler.products
+    events:
+      - http:
+          path: products
+          method: GET
+          cors: true
+
+  product:
+    handler: handler.product
+    events:
+      - http:
+          path: product/{id}
+          method: GET
+          cors: true

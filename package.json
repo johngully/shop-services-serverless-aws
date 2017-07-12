@@ -1,0 +1,32 @@
+{
+  "name": "shop-services-serverless-aws",
+  "version": "0.1.0",
+  "description": "Services to support the shop examples implemented using serverless AWS Lambda",
+  "main": "handler.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johngully/shop-services-serverless-aws.git"
+  },
+  "author": "John Gully",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johngully/shop-services-serverless-aws/issues"
+  },
+  "homepage": "https://github.com/johngully/shop-services-serverless-aws#readme",
+  "dependencies": {
+    "lowdb": "^0.16.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "serverless-webpack": "^2.0.0",
+    "webpack": "^3.2.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "scripts": {
+    "invoke-products": "serverless webpack invoke --function products",
+    "invoke-product": "serverless webpack invoke --function product --path tests/productPathData.json",
+    "deploy": "serverless deploy"
+  }
+}
